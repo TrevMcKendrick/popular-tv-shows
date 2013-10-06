@@ -1,13 +1,19 @@
 class TVShow
   attr_accessor :name
 
-  def initialize
-  end
-  
-  def name
-    @name
+  EPISODE_REGEX = /S\d{2}E\d{2}/
+
+  def initialize(torrent = {})
+    @torrent = torrent
   end
 
-  def play
+  def name
+    @name ||= @torrent[:name].split(EPISODE_REGEX).first.strip
   end
+
+  def episode
+    @episode ||= @torrent[:name].scan(EPISODE_REGEX).to_s.strip
+  end
+
+
 end
