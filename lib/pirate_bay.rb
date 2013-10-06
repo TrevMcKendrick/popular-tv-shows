@@ -28,7 +28,7 @@ class PirateBay
     @torrents ||= self.doc.css("a.detLink").collect do |torrent_doc|
       {
         :name => torrent_doc.content, 
-        :href => torrent_doc.attr("href")
+        :href => "http://thepiratebay.sx/#{torrent_doc.attr("href")}"
       }
     end
   end

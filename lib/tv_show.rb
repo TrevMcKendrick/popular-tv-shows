@@ -12,8 +12,11 @@ class TVShow
   end
 
   def episode
-    @episode ||= @torrent[:name].scan(EPISODE_REGEX).to_s.strip
+    @episode ||= @torrent[:name].scan(EPISODE_REGEX).first.to_s.strip
   end
 
+  def href
+    @href ||= @torrent[:href]
+  end
 
 end
