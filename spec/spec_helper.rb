@@ -1,4 +1,5 @@
 require_relative '../lib/tv_show'
+require_relative '../lib/pirate_bay'
 
 RSpec.configure do |config|
   # Use color in STDOUT
